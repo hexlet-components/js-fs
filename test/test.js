@@ -32,4 +32,18 @@ describe('FS', () => {
     files.rmdirSync('/etc/nginx/conf.d');
     assert.deepEqual(files.readdirSync('/etc/nginx'), ['nginx.conf']);
   });
+
+  it('#statSync', () => {
+    assert.ok(files.statSync('/etc/nginx').isDirectory());
+    assert.ok(!files.statSync('/etc/nginx').isFile());
+
+    assert.ok(!files.statSync('/etc/nginx/nginx.conf').isDirectory());
+    assert.ok(files.statSync('/etc/nginx/nginx.conf').isFile());
+  });
+
+  it('#renameSync', () => {
+    files.renameSync('/etc/nginx/nginx.conf', '/etc');
+    assert.deepEqual(files.readdirSync('/etc/nginx'), ['conf.d']);
+    assert.deepEqual(files.readdirSync('/etc'), ['nginx', 'nginx.conf']);
+  });
 });

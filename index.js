@@ -23,7 +23,11 @@ export default class {
     child.parent.removeChild(name);
   }
 
-  renameSync() {
+  renameSync(oldPath: string, newPath: string) {
+    const child = this.tree.getDeepChild(getPathParts(oldPath));
+    const newParent = this.tree.getDeepChild(getPathParts(newPath));
+    child.parent.removeChild(child.getKey());
+    newParent.addChild(child.getKey(), child.getMeta());
   }
 
   rmdirSync(path: string) {
@@ -33,7 +37,9 @@ export default class {
     child.parent.removeChild(name);
   }
 
-  statSync() {
+  statSync(path: string) {
+    const child = this.tree.getDeepChild(getPathParts(path));
+    return child.getMeta().getStats();
   }
 
   mkdirpSync(path: string) {

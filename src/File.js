@@ -13,4 +13,12 @@ export default class extends Node {
   getBody() {
     return this.body;
   }
+
+  isDirectory() {
+    return false;
+  }
+
+  isFile() {
+    return true;
+  }
 }
