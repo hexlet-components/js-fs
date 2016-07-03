@@ -1,11 +1,11 @@
 {
-  "name": "hexlet-js",
+  "name": "hexlet-fs",
   "version": "0.1.0",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register",
-    "build": "babel src --out-dir dist",
+    "build": "NODE_ENV=production babel index.js --out-dir dist --source-maps inline",
     "eslint": "eslint",
 
     "prepublish": "npm run build"
