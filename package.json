@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/hexlet-components/js-js#readme",
   "dependencies": {
-    "hexlet-trees": "*"
+    "hexlet-trees": "*",
+    "errno": "*"
   },
   "devDependencies": {
     "babel-plugin-syntax-flow": "*",
