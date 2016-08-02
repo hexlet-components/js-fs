@@ -15,6 +15,7 @@ describe('FS', () => {
     files = new HexletFs();
     files.mkdirpSync('/etc/nginx');
     files.mkdirSync('/opt');
+    files.touchSync('/opt/file.txt');
     files.mkdirpSync('/etc/nginx/conf.d');
     files.writeFileSync('/etc/nginx/nginx.conf', 'directives');
   });
@@ -29,6 +30,17 @@ describe('FS', () => {
       err => err.code === 'ENOTDIR');
     assert.throws(() => files.mkdirSync('/opt/folder/inner'),
       err => err.code === 'ENOENT');
+
+    assert.ok(files.statSync('/opt').isDirectory());
+  });
+
+  it('#touchSync', () => {
+    assert.throws(() => files.touchSync('/etc/nginx/nginx.conf/wrong'),
+      err => err.code === 'ENOTDIR');
+    assert.throws(() => files.touchSync('/opt/folder/inner'),
+      err => err.code === 'ENOENT');
+
+    assert.ok(files.statSync('/opt/file.txt').isFile());
   });
 
   it('#writeFileSync', () => {

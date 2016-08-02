@@ -104,6 +104,20 @@ export default class {
     return parent.addChild(name, new Dir(name));
   }
 
+  touchSync(path: string) {
+    const parts = getPathParts(path);
+    const name = parts[parts.length - 1];
+    const parent = this.tree.getDeepChild(parts.slice(0, -1));
+    if (!parent) {
+      throw new HexletFsError(errors.code.ENOENT, path);
+    }
+    if (!parent.getMeta().isDirectory()) {
+      throw new HexletFsError(errors.code.ENOTDIR, path);
+    }
+    return parent.addChild(name, new File(name, ''));
+  }
+
+
   writeFileSync(path: string, body: string) {
     const parts = getPathParts(path);
     const name = parts[parts.length - 1];
