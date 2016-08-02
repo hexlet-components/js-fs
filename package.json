@@ -7,6 +7,7 @@
     "test": "mocha --compilers js:babel-core/register",
     "build": "NODE_ENV=production babel index.js --out-dir dist --source-maps inline",
     "eslint": "eslint",
+    "flow": "flow",
 
     "prepublish": "npm run build"
   },
@@ -25,6 +26,8 @@
     "errno": "*"
   },
   "devDependencies": {
+    "chai": "*",
+    "flow-bin": "*",
     "babel-plugin-syntax-flow": "*",
     "babel-plugin-transform-flow-strip-types": "*",
     "babel-plugin-typecheck": "*",

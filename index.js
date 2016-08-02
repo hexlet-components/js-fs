@@ -3,10 +3,10 @@
 import errors from 'errno';
 import Tree from 'hexlet-trees';
 
-import Dir from  './src/Dir';
-import File from  './src/File';
+import Dir from './src/Dir';
+import File from './src/File';
 
-import HexletFsError from  './src/HexletFsError';
+import HexletFsError from './src/HexletFsError';
 
 const getPathParts = (path: string) =>
   path.split('/').filter(part => part !== '');
@@ -15,7 +15,7 @@ export default class {
   tree: Tree;
 
   constructor() {
-    this.tree = new Tree('/');
+    this.tree = new Tree('/', new Dir('/'));
   }
 
   unlinkSync(path: string) {
@@ -89,6 +89,19 @@ export default class {
     }
     return dir.getChildren()
       .map(child => child.getKey());
+  }
+
+  mkdirSync(path: string) {
+    const parts = getPathParts(path);
+    const name = parts[parts.length - 1];
+    const parent = this.tree.getDeepChild(parts.slice(0, -1));
+    if (!parent) {
+      throw new HexletFsError(errors.code.ENOENT, path);
+    }
+    if (!parent.getMeta().isDirectory()) {
+      throw new HexletFsError(errors.code.ENOTDIR, path);
+    }
+    return parent.addChild(name, new Dir(name));
   }
 
   writeFileSync(path: string, body: string) {

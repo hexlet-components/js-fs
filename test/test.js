@@ -1,9 +1,12 @@
 // @flow
 
 import { beforeEach, describe, it } from 'mocha';
+// import chai from 'chai';
 import assert from 'assert';
 
 import HexletFs from '../index';
+
+// const assert = chai.assert;
 
 describe('FS', () => {
   let files;
@@ -11,13 +14,21 @@ describe('FS', () => {
   beforeEach(() => {
     files = new HexletFs();
     files.mkdirpSync('/etc/nginx');
+    files.mkdirSync('/opt');
     files.mkdirpSync('/etc/nginx/conf.d');
     files.writeFileSync('/etc/nginx/nginx.conf', 'directives');
   });
 
   it('#mkdirpSync', () => {
-    assert.throws(() => files.mkdirpSync('/etc/nginx/nginx.conf/wrong'), err =>
-    err.code === 'ENOTDIR');
+    assert.throws(() => files.mkdirpSync('/etc/nginx/nginx.conf/wrong'),
+      err => err.code === 'ENOTDIR');
+  });
+
+  it('#mkdirSync', () => {
+    assert.throws(() => files.mkdirSync('/etc/nginx/nginx.conf/wrong'),
+      err => err.code === 'ENOTDIR');
+    assert.throws(() => files.mkdirSync('/opt/folder/inner'),
+      err => err.code === 'ENOENT');
   });
 
   it('#writeFileSync', () => {
