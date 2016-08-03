@@ -4,7 +4,7 @@ import { beforeEach, describe, it } from 'mocha';
 // import chai from 'chai';
 import assert from 'assert';
 
-import HexletFs from '../index';
+import HexletFs from '../src/index';
 
 // const assert = chai.assert;
 

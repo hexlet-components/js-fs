@@ -3,10 +3,10 @@
 import errors from 'errno';
 import Tree from 'hexlet-trees';
 
-import Dir from './src/Dir';
-import File from './src/File';
+import Dir from './Dir';
+import File from './File';
 
-import HexletFsError from './src/HexletFsError';
+import HexletFsError from './HexletFsError';
 
 const getPathParts = (path: string) =>
   path.split('/').filter(part => part !== '');
