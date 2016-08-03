@@ -11,6 +11,8 @@ import HexletFsError from './src/HexletFsError';
 const getPathParts = (path: string) =>
   path.split('/').filter(part => part !== '');
 
+export { Dir, File };
+
 export default class {
   tree: Tree;
 
