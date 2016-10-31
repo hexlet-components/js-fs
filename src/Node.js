@@ -2,19 +2,31 @@
 
 import Stats from './Stats';
 
+/**
+ * File
+ */
 export default class {
   name: string;
   isFile: () => bool;
   isDirectory: () => bool;
 
+  /**
+   * Constructor
+   */
   constructor(name: string) {
     this.name = name;
   }
 
+  /**
+   * Get stats
+   */
   getStats() {
     return new Stats(this.isFile(), this.isDirectory());
   }
 
+  /**
+   * Get name
+   */
   getName() {
     return this.name;
   }

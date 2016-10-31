@@ -13,6 +13,9 @@ const getPathParts = (path: string) =>
 
 export { Dir, File };
 
+/**
+ * FS
+ */
 export default class {
   tree: Tree;
 
@@ -20,6 +23,9 @@ export default class {
     this.tree = new Tree('/', new Dir('/'));
   }
 
+  /**
+   * Unlink file
+   */
   unlinkSync(path: string) {
     const parts = getPathParts(path);
     const name = parts[parts.length - 1];
@@ -32,6 +38,9 @@ export default class {
     return current.parent.removeChild(name);
   }
 
+  /**
+   * Remove directory
+   */
   rmdirSync(path: string) {
     const parts = getPathParts(path);
     const name = parts[parts.length - 1];
@@ -49,6 +58,9 @@ export default class {
     current.parent.removeChild(name);
   }
 
+  /**
+   * Get file stat
+   */
   statSync(path: string) {
     const current = this.tree.getDeepChild(getPathParts(path));
     if (!current) {
@@ -57,6 +69,9 @@ export default class {
     return current.getMeta().getStats();
   }
 
+  /**
+   * Make directory
+   */
   mkdirpSync(path: string) {
     getPathParts(path).reduce((subtree, part) => {
       const current = subtree.getChild(part);
@@ -71,6 +86,9 @@ export default class {
     }, this.tree);
   }
 
+  /**
+   * Read file
+   */
   readFileSync(path: string) {
     const current = this.tree.getDeepChild(getPathParts(path));
     if (!current) {
@@ -82,6 +100,9 @@ export default class {
     return current.getMeta().getBody();
   }
 
+  /**
+   * Read directory
+   */
   readdirSync(path: string) {
     const dir = this.tree.getDeepChild(getPathParts(path));
     if (!dir) {
@@ -93,6 +114,9 @@ export default class {
       .map(child => child.getKey());
   }
 
+  /**
+   * Make directory
+   */
   mkdirSync(path: string) {
     const parts = getPathParts(path);
     const name = parts[parts.length - 1];
@@ -106,6 +130,9 @@ export default class {
     return parent.addChild(name, new Dir(name));
   }
 
+  /**
+   * Touch file
+   */
   touchSync(path: string) {
     const parts = getPathParts(path);
     const name = parts[parts.length - 1];
@@ -119,6 +146,9 @@ export default class {
     return parent.addChild(name, new File(name, ''));
   }
 
+  /**
+   * Copy file
+   */
   copySync(src: string, dest: string) {
     const srcParts = getPathParts(src);
     const node = this.tree.getDeepChild(srcParts);
@@ -144,6 +174,9 @@ export default class {
   }
 
 
+  /**
+   * Write file
+   */
   writeFileSync(path: string, body: string) {
     const parts = getPathParts(path);
     const name = parts[parts.length - 1];
