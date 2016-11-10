@@ -19,6 +19,9 @@ export { Dir, File };
 export default class {
   tree: Tree;
 
+  /**
+   * Constructor
+   */
   constructor() {
     this.tree = new Tree('/', new Dir('/'));
   }
