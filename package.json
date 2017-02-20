@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hexlet-components/js-js.git"
+    "url": "git+https://github.com/hexlet-components/js-fs.git"
   },
   "author": "Kirill Mokevnin",
   "license": "ISC",
