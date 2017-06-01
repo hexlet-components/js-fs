@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FS #copySync 1`] = `"ENOENT: no such file or directory, undefined"`;
+
+exports[`FS #copySync 2`] = `"EISDIR: illegal operation on a directory, /opt"`;
+
+exports[`FS #copySync 3`] = `"ENOENT: no such file or directory, /op/file.txt"`;
+
+exports[`FS #copySync 4`] = `"ENOENT: no such file or directory, /etc/undefined/inner"`;
+
+exports[`FS #mkdirSync 1`] = `"ENOTDIR: not a directory, /etc/nginx/nginx.conf/wrong"`;
+
+exports[`FS #mkdirSync 2`] = `"ENOENT: no such file or directory, /opt/folder/inner"`;
+
+exports[`FS #mkdirpSync 1`] = `"ENOTDIR: not a directory, /etc/nginx/nginx.conf/wrong"`;
+
+exports[`FS #readFileSync 1`] = `"EISDIR: illegal operation on a directory, /etc/nginx"`;
+
+exports[`FS #readFileSync 2`] = `"ENOENT: no such file or directory, /etc/unknown"`;
+
+exports[`FS #readdirSync 1`] = `"ENOENT: no such file or directory, /etc/nginx/undefined"`;
+
+exports[`FS #readdirSync 2`] = `"ENOTDIR: not a directory, /etc/nginx/nginx.conf"`;
+
+exports[`FS #rmdirSync 1`] = `"ENOENT: no such file or directory, /etc/unknown"`;
+
+exports[`FS #rmdirSync 2`] = `"ENOTEMPTY: directory not empty, /etc/nginx"`;
+
+exports[`FS #rmdirSync 3`] = `"ENOTDIR: not a directory, /etc/nginx/nginx.conf"`;
+
+exports[`FS #statSync 1`] = `"ENOENT: no such file or directory, /etc/unknown"`;
+
+exports[`FS #touchSync 1`] = `"ENOTDIR: not a directory, /etc/nginx/nginx.conf/wrong"`;
+
+exports[`FS #touchSync 2`] = `"ENOENT: no such file or directory, /opt/folder/inner"`;
+
+exports[`FS #unlinkSync 1`] = `"EPERM: operation not permitted, /etc/nginx"`;
+
+exports[`FS #writeFileSync 1`] = `"ENOENT: no such file or directory, [object Object]"`;
+
+exports[`FS #writeFileSync 2`] = `"EISDIR: illegal operation on a directory, [object Object]"`;

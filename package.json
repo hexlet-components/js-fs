@@ -5,11 +5,10 @@
   "main": "dist/index.js",
   "scripts": {
     "documentation": "documentation",
-    "test": "mocha --compilers js:babel-core/register",
+    "test": "jest --colors",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "eslint": "eslint",
     "flow": "flow",
-
     "prepublish": "npm run build"
   },
   "repository": {
@@ -23,22 +22,25 @@
   },
   "homepage": "https://github.com/hexlet-components/js-js#readme",
   "dependencies": {
-    "hexlet-trees": "*",
-    "errno": "*"
+    "babel-preset-env": "*",
+    "babel-preset-flow": "*",
+    "babel-preset-stage-0": "*",
+    "errno": "*",
+    "hexlet-trees": "*"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "devDependencies": {
-    "documentation": "v4.0.0-beta11",
-    "chai": "*",
-    "flow-bin": "*",
-    "babel-eslint": "*",
-    "babel-core": "*",
     "babel-cli": "*",
-    "babel-preset-flow": "*",
-    "babel-preset-env": "*",
-    "babel-preset-stage-0": "*",
+    "babel-core": "*",
+    "babel-eslint": "*",
+    "documentation": "v4.0.0-rc.1",
     "eslint": "*",
-    "eslint-plugin-import": "*",
     "eslint-config-airbnb": "*",
-    "mocha": "*"
+    "eslint-plugin-flowtype": "*",
+    "flow-bin": "0.47",
+    "flow-typed": "*",
+    "jest": "^20"
   }
 }
