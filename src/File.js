@@ -14,6 +14,8 @@ export default class extends Node {
   constructor(name: string, body: string) {
     super(name);
     this.body = body;
+    this.file = true;
+    this.directory = false;
   }
 
   /**
@@ -27,13 +29,13 @@ export default class extends Node {
    * is directory?
    */
   isDirectory() {
-    return false;
+    return this.directory;
   }
 
   /**
    * is file?
    */
   isFile() {
-    return true;
+    return this.file;
   }
 }

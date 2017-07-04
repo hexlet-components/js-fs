@@ -1,5 +1,7 @@
 // @flow
 
+import 'source-map-support/register';
+
 import path from 'path';
 import errors from 'errno';
 import Tree from 'hexlet-trees';
@@ -18,7 +20,7 @@ export { Dir, File };
  * FS
  */
 export default class {
-  tree: Tree;
+  tree: *;
 
   /**
    * Constructor

@@ -7,8 +7,6 @@ import Stats from './Stats';
  */
 export default class {
   name: string;
-  isFile: () => bool;
-  isDirectory: () => bool;
 
   /**
    * Constructor

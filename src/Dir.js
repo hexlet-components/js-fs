@@ -7,16 +7,24 @@ import Node from './Node';
  */
 export default class extends Node {
   /**
+   * Constructor
+   */
+  constructor(name: string) {
+    super(name);
+    this.file = false;
+    this.directory = true;
+  }
+  /**
    * is directory?
    */
   isDirectory() {
-    return true;
+    return this.directory;
   }
 
   /**
    * is file?
    */
   isFile() {
-    return false;
+    return this.file;
   }
 }
