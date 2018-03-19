@@ -15,14 +15,20 @@ export default class extends Node {
     this.directory = true;
   }
   /**
-   * is directory?
+   * Returns true if it's a file system directory.
+   * @example
+   * const dir = new Dir('/');
+   * dir.isDirectory(); // true
    */
   isDirectory() {
     return this.directory;
   }
 
   /**
-   * is file?
+   * Returns false if it's a file system directory.
+   * @example
+   * const dir = new Dir('/');
+   * dir.isFile(); // false
    */
   isFile() {
     return this.file;

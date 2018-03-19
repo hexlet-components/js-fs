@@ -26,14 +26,20 @@ export default class extends Node {
   }
 
   /**
-   * is directory?
+   * Returns false if it's a regular file.
+   * @example
+   * const file = new File('file.txt', '');
+   * file.isDirectory(); // false
    */
   isDirectory() {
     return this.directory;
   }
 
   /**
-   * is file?
+   * Returns true if it's a regular file.
+   * @example
+   * const file = new File('file.txt', '');
+   * file.isFile(); // true
    */
   isFile() {
     return this.file;
