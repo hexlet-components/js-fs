@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/hexlet-components/js-js#readme",
   "dependencies": {
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "*",
     "babel-preset-flow": "*",
     "babel-preset-stage-0": "*",
     "errno": "^0.1.7",
@@ -34,19 +34,20 @@
     "testEnvironment": "node"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.2",
-    "documentation": "^6.1.0",
-    "eslint": "^4.19.0",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-flowtype": "^2.46.1",
-    "eslint-plugin-import": "^2.9.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.7.0",
-    "flow-bin": "0.49.1",
-    "flow-typed": "^2.4.0",
-    "jest": "^20",
-    "jest-cli": "^23.0.0-alpha.0"
+    "babel-cli": "*",
+    "babel-core": "*",
+    "babel-eslint": "*",
+    "babel-jest": "^22.4.1",
+    "documentation": "*",
+    "eslint": "*",
+    "eslint-config-airbnb": "*",
+    "eslint-plugin-flowtype": "*",
+    "eslint-plugin-import": "*",
+    "eslint-plugin-jsx-a11y": "*",
+    "eslint-plugin-react": "*",
+    "flow-bin": "^0.68.0",
+    "flow-typed": "*",
+    "jest": "^22.4.2",
+    "jest-cli": "^22.4.2"
   }
 }
