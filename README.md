@@ -1,5 +1,7 @@
 # js-fs
 
+[![Build Status](https://travis-ci.org/hexlet-components/js-fs.svg?branch=master)](https://travis-ci.org/hexlet-components/js-fs)
+
 ```javascript
 import HexletFs from 'hexlet-fs';
 const fs = new HexletFs();
