@@ -1,5 +1,4 @@
 install:
-	yarn
 	npm run flow-typed install
 
 docs:
