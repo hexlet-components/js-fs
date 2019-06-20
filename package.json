@@ -1,6 +1,6 @@
 {
-  "name": "hexlet-fs",
-  "version": "0.3.5",
+  "name": "@hexlet/fs",
+  "version": "0.3.6",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -27,7 +27,7 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-0": "^6.24.1",
     "errno": "^0.1.7",
-    "hexlet-trees": "^0.5.8"
+    "@hexlet/trees": "^0.5.9"
   },
   "jest": {
     "testEnvironment": "node"

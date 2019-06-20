@@ -2,7 +2,7 @@
 
 import path from 'path';
 import errors from 'errno';
-import Tree from 'hexlet-trees';
+import Tree from '@hexlet/trees';
 
 import Dir from './Dir';
 import File from './File';
