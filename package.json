@@ -21,28 +21,21 @@
   },
   "homepage": "https://github.com/hexlet-components/js-js#readme",
   "dependencies": {
-    "@babel/preset-env": "^7.0.0-beta.47",
-    "@hexlet/trees": "^0.5.9",
-    "babel-preset-stage-0": "^6.24.1",
+    "@hexlet/trees": "^0.5.11",
     "errno": "^0.1.7"
   },
-  "jest": {
-    "testEnvironment": "node"
-  },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.47",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.3",
-    "babel-jest": "^23.0.0-charlie.3",
-    "documentation": "^6.3.3",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-jest": "^21.15.1",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.8.2",
-    "jest": "^22.4.4",
-    "jest-cli": "^22.4.4"
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^25.1.0",
+    "documentation": "^12.1.4",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jest": "^23.8.1",
+    "jest": "^25.1.0",
+    "jest-cli": "^25.1.0"
   }
 }

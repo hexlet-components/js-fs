@@ -9,8 +9,9 @@ import File from './File';
 
 import HexletFsError from './HexletFsError';
 
-const getPathParts = (filepath) =>
-  filepath.split(path.sep).filter(part => part !== '');
+const getPathParts = (filepath) => (
+  filepath.split(path.sep).filter((part) => part !== '')
+);
 
 export { Dir, File };
 
@@ -110,7 +111,7 @@ export default class {
     } else if (!current.getMeta().isDirectory()) {
       throw new HexletFsError(errors.code.ENOTDIR, filepath);
     }
-    return current.getChildren().map(child => child.getKey());
+    return current.getChildren().map((child) => child.getKey());
   }
 
   /**

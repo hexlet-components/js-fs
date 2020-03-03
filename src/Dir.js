@@ -14,6 +14,7 @@ export default class extends Node {
     this.file = false;
     this.directory = true;
   }
+
   /**
    * Returns true if it's a file system directory.
    * @example
