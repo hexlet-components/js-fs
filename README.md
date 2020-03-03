@@ -1,5 +1,7 @@
 # js-fs
 
+[![github action status](https://github.com/hexlet-components/js-fs/workflows/Node%20CI/badge.svg)](https://github.com/hexlet-components/js-fs/actions)
+
 ## Install
 
 ```sh
