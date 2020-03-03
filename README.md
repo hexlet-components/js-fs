@@ -5,18 +5,33 @@
 ## Install
 
 ```sh
-npm install @hexlet/fs --save
+npm install @hexlet/fs
 ```
+
+## Usage example
 
 ```javascript
 import HexletFs from '@hexlet/fs';
 const fs = new HexletFs();
 
-fs.mkdirpSync("/a/test/dir");
-fs.writeFileSync("/a/test/dir/file.txt", "Hello World");
-fs.readFileSync("/a/test/dir/file.txt"); // returns Hello World
+fs.mkdirSync('/opt');
+fs.mkdirpSync('/etc/nginx/conf.d');
+fs.rmdirSync('/opt');
 
-fs.readdirSync("/a/test"); // returns ["dir"]
-fs.statSync("/a/test/dir").isDirectory(); // returns true
-fs.rmdirSync("/a/test/dir");
+fs.touchSync('/etc/nginx/nginx.conf');
+fs.touchSync('/etc/hosts');
+fs.unlinkSync('/etc/nginx/nginx.conf');
+
+fs.readdirSync('/etc'); // ['nginx', 'hosts']
+fs.statSync('/etc/hosts').isFile(); // true
+fs.statSync('/etc/hosts').isDirectory(); // false
+fs.statSync('/etc').isDirectory(); // true
+
+fs.writeFileSync('/etc/hosts', 'localhost');
+fs.readFileSync('/etc/hosts'); // 'localhost'
+
+fs.copySync('/etc/hosts', '/etc/nginx');
+fs.readdirSync('/etc/nginx'); // [ 'conf.d', 'hosts' ]
 ```
+
+For more information, see the [Full Documentation](https://github.com/hexlet-components/js-fs/tree/master/docs)

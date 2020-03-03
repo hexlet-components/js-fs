@@ -4,6 +4,8 @@ import Node from './Node';
 
 /**
  * Directory
+ * @example
+ * const dir = new Dir('/');
  */
 export default class extends Node {
   /**
