@@ -1,4 +1,4 @@
-// @flow
+// @ts-check
 
 import Node from './Node';
 
@@ -9,7 +9,7 @@ export default class extends Node {
   /**
    * Constructor
    */
-  constructor(name: string) {
+  constructor(name) {
     super(name);
     this.file = false;
     this.directory = true;

@@ -1,5 +1,5 @@
 install:
-	npm run flow-typed install
+	npm install
 
 docs:
 	mkdir -p docs

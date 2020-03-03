@@ -1,4 +1,4 @@
-// @flow
+// @ts-check
 
 import path from 'path';
 import errors from 'errno';
@@ -9,7 +9,7 @@ import File from './File';
 
 import HexletFsError from './HexletFsError';
 
-const getPathParts = (filepath: string) =>
+const getPathParts = (filepath) =>
   filepath.split(path.sep).filter(part => part !== '');
 
 export { Dir, File };
@@ -18,8 +18,6 @@ export { Dir, File };
  * FS
  */
 export default class {
-  tree: *;
-
   /**
    * Constructor
    */
@@ -30,7 +28,7 @@ export default class {
   /**
    * Unlink file
    */
-  unlinkSync(filepath: string): boolean {
+  unlinkSync(filepath) {
     const { base } = path.parse(filepath);
     const current = this.findNode(filepath);
     if (!current) {
@@ -44,7 +42,7 @@ export default class {
   /**
    * Remove directory
    */
-  rmdirSync(filepath: string): boolean {
+  rmdirSync(filepath) {
     const { base } = path.parse(filepath);
     const current = this.findNode(filepath);
     if (!current) {
@@ -63,7 +61,7 @@ export default class {
   /**
    * Get file stat
    */
-  statSync(filepath: string): Stats {
+  statSync(filepath) {
     const current = this.findNode(filepath);
     if (!current) {
       throw new HexletFsError(errors.code.ENOENT, filepath);
@@ -74,7 +72,7 @@ export default class {
   /**
    * Make directory
    */
-  mkdirpSync(filepath: string): Dir {
+  mkdirpSync(filepath) {
     getPathParts(filepath).reduce((subtree, part) => {
       const current = subtree.getChild(part);
       if (!current) {
@@ -91,7 +89,7 @@ export default class {
   /**
    * Read file
    */
-  readFileSync(filepath: string): string {
+  readFileSync(filepath) {
     const current = this.findNode(filepath);
     if (!current) {
       throw new HexletFsError(errors.code.ENOENT, filepath);
@@ -105,7 +103,7 @@ export default class {
   /**
    * Read directory
    */
-  readdirSync(filepath: string): Array<string> {
+  readdirSync(filepath) {
     const current = this.findNode(filepath);
     if (!current) {
       throw new HexletFsError(errors.code.ENOENT, filepath);
@@ -118,7 +116,7 @@ export default class {
   /**
    * Make directory
    */
-  mkdirSync(filepath: string): Dir {
+  mkdirSync(filepath) {
     const { base, dir } = path.parse(filepath);
     const parent = this.findNode(dir);
     if (!parent) {
@@ -133,7 +131,7 @@ export default class {
   /**
    * Touch file
    */
-  touchSync(filepath: string): File {
+  touchSync(filepath) {
     const { base, dir } = path.parse(filepath);
     const parent = this.findNode(dir);
     if (!parent) {
@@ -148,7 +146,7 @@ export default class {
   /**
    * Copy file
    */
-  copySync(src: string, dest: string): File {
+  copySync(src, dest) {
     const node = this.findNode(src);
     if (!node) {
       throw new HexletFsError(errors.code.ENOENT, src);
@@ -175,7 +173,7 @@ export default class {
   /**
    * Write file
    */
-  writeFileSync(filepath: string, body: string): File {
+  writeFileSync(filepath, body) {
     const { dir, base } = path.parse(filepath);
     const parent = this.findNode(dir);
     if (!parent) {

@@ -1,16 +1,13 @@
-// @flow
+// @ts-check
 
 /**
  * Stats
  */
 export default class {
-  file: boolean;
-  directory: boolean;
-
   /**
    * Constructor
    */
-  constructor(file: boolean, directory: boolean) {
+  constructor(file, directory) {
     this.file = file;
     this.directory = directory;
   }

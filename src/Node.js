@@ -1,4 +1,4 @@
-// @flow
+// @ts-check
 
 import Stats from './Stats';
 
@@ -6,12 +6,10 @@ import Stats from './Stats';
  * File
  */
 export default class {
-  name: string;
-
   /**
    * Constructor
    */
-  constructor(name: string) {
+  constructor(name) {
     this.name = name;
   }
 

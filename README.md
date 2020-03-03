@@ -1,7 +1,5 @@
 # js-fs
 
-[![Build Status](https://travis-ci.org/hexlet-components/js-fs.svg?branch=master)](https://travis-ci.org/hexlet-components/js-fs)
-
 ## Install
 
 ```sh
