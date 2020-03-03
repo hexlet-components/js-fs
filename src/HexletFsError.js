@@ -1,20 +1,16 @@
-// @flow
+// @ts-check
 
 export default class extends Error {
-  code: string;
-  errno: number;
-  path: string;
-
   /**
    * Constructor
    */
-  constructor(err: { code: string, errno: number, description: string }, path: string) {
-    super(`${err.code}: ${err.description}, ${path}`);
+  constructor(error, path) {
+    super(`${error.code}: ${error.description}, ${path}`);
 
     // this.name = this.constructor.name;
     // this.stack = (new Error()).stack;
-    this.code = err.code;
-    this.errno = err.errno;
+    this.code = error.code;
+    this.errno = error.errno;
     this.path = path;
   }
 }

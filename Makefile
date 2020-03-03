@@ -1,5 +1,5 @@
 install:
-	npm run flow-typed install
+	npm install
 
 docs:
 	mkdir -p docs
@@ -12,9 +12,9 @@ test:
 	npm run test
 
 lint:
-	npm run eslint .
+	npx eslint .
 
 publish:
-	npm publish
+	npm publish --access public
 
 .PHONY: test docs

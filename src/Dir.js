@@ -1,19 +1,22 @@
-// @flow
+// @ts-check
 
 import Node from './Node';
 
 /**
  * Directory
+ * @example
+ * const dir = new Dir('/');
  */
 export default class extends Node {
   /**
    * Constructor
    */
-  constructor(name: string) {
+  constructor(name) {
     super(name);
     this.file = false;
     this.directory = true;
   }
+
   /**
    * Returns true if it's a file system directory.
    * @example
