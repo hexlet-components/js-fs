@@ -15,7 +15,7 @@ import HexletFs from '@hexlet/fs';
 const fs = new HexletFs();
 
 fs.mkdirSync('/opt');
-fs.mkdirpSync('/etc/nginx/conf.d');
+fs.mkdirSync('/etc/nginx/conf.d');
 fs.rmdirSync('/opt');
 
 fs.touchSync('/etc/nginx/nginx.conf');
