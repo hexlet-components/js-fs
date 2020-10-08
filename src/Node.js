@@ -1,6 +1,6 @@
 // @ts-check
 
-import Stats from './Stats';
+import Stats from './Stats.js';
 
 /**
  * File

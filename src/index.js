@@ -4,10 +4,10 @@ import path from 'path';
 import errors from 'errno';
 import Tree from '@hexlet/trees';
 
-import Dir from './Dir';
-import File from './File';
+import Dir from './Dir.js';
+import File from './File.js';
 
-import HexletFsError from './HexletFsError';
+import HexletFsError from './HexletFsError.js';
 
 const getPathParts = (filepath) => (
   filepath.split(path.sep).filter((part) => part !== '')

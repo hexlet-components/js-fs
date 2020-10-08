@@ -1,6 +1,6 @@
 // @ts-check
 
-import Node from './Node';
+import Node from './Node.js';
 
 /**
  * Directory
