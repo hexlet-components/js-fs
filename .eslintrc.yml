@@ -1,4 +1,6 @@
 ---
+root:
+  true
 
 plugins:
   - jest
@@ -6,12 +8,12 @@ plugins:
 env:
   node: true
   jest: true
+  es2020: true
 
-parser: babel-eslint
 
 extends:
   - 'airbnb-base'
   - 'plugin:jest/recommended'
 
 rules:
-  no-console: 0
+  import/extensions: 0

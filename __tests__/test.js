@@ -1,6 +1,6 @@
 // @ts-check
 
-import HexletFs from '../src';
+import HexletFs from '../src/index.js';
 
 describe('FS', () => {
   let files;
