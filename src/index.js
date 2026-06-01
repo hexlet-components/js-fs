@@ -1,17 +1,16 @@
 // @ts-check
 
-import path from 'path';
-import errors from 'errno';
 import Tree from '@hexlet/trees';
+import errors from 'errno';
+import path from 'path';
 
 import Dir from './Dir.js';
 import File from './File.js';
 
 import HexletFsError from './HexletFsError.js';
 
-const getPathParts = (filepath) => (
-  filepath.split(path.sep).filter((part) => part !== '')
-);
+const getPathParts = (filepath) =>
+  filepath.split(path.sep).filter((part) => part !== '');
 
 export { Dir, File };
 
