@@ -1,41 +1,41 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`FS > #copySync 1`] = `[Error: ENOENT: no such file or directory, undefined]`;
+exports[`FS > #copySync > destination parent does not exist 1`] = `[Error: ENOENT: no such file or directory, /etc/undefined/inner]`;
 
-exports[`FS > #copySync 2`] = `[Error: EISDIR: illegal operation on a directory, /opt]`;
+exports[`FS > #copySync > source does not exist 1`] = `[Error: ENOENT: no such file or directory, undefined]`;
 
-exports[`FS > #copySync 3`] = `[Error: ENOENT: no such file or directory, /op/file.txt]`;
+exports[`FS > #copySync > source is a directory 1`] = `[Error: EISDIR: illegal operation on a directory, /opt]`;
 
-exports[`FS > #copySync 4`] = `[Error: ENOENT: no such file or directory, /etc/undefined/inner]`;
+exports[`FS > #copySync > source path is misspelled 1`] = `[Error: ENOENT: no such file or directory, /op/file.txt]`;
 
-exports[`FS > #mkdirSync 1`] = `[Error: ENOTDIR: not a directory, /etc/nginx/nginx.conf/wrong]`;
+exports[`FS > #mkdirSync > parent directory does not exist 1`] = `[Error: ENOENT: no such file or directory, /opt/folder/inner]`;
 
-exports[`FS > #mkdirSync 2`] = `[Error: ENOENT: no such file or directory, /opt/folder/inner]`;
+exports[`FS > #mkdirSync > parent path is a file 1`] = `[Error: ENOTDIR: not a directory, /etc/nginx/nginx.conf/wrong]`;
 
-exports[`FS > #mkdirpSync 1`] = `[Error: ENOTDIR: not a directory, /etc/nginx/nginx.conf/wrong]`;
+exports[`FS > #mkdirpSync > parent path is a file 1`] = `[Error: ENOTDIR: not a directory, /etc/nginx/nginx.conf/wrong]`;
 
-exports[`FS > #readFileSync 1`] = `[Error: EISDIR: illegal operation on a directory, /etc/nginx]`;
+exports[`FS > #readFileSync > file does not exist 1`] = `[Error: ENOENT: no such file or directory, /etc/unknown]`;
 
-exports[`FS > #readFileSync 2`] = `[Error: ENOENT: no such file or directory, /etc/unknown]`;
+exports[`FS > #readFileSync > target is a directory 1`] = `[Error: EISDIR: illegal operation on a directory, /etc/nginx]`;
 
-exports[`FS > #readdirSync 1`] = `[Error: ENOENT: no such file or directory, /etc/nginx/undefined]`;
+exports[`FS > #readdirSync > directory does not exist 1`] = `[Error: ENOENT: no such file or directory, /etc/nginx/undefined]`;
 
-exports[`FS > #readdirSync 2`] = `[Error: ENOTDIR: not a directory, /etc/nginx/nginx.conf]`;
+exports[`FS > #readdirSync > target is a file 1`] = `[Error: ENOTDIR: not a directory, /etc/nginx/nginx.conf]`;
 
-exports[`FS > #rmdirSync 1`] = `[Error: ENOENT: no such file or directory, /etc/unknown]`;
+exports[`FS > #rmdirSync > directory does not exist 1`] = `[Error: ENOENT: no such file or directory, /etc/unknown]`;
 
-exports[`FS > #rmdirSync 2`] = `[Error: ENOTEMPTY: directory not empty, /etc/nginx]`;
+exports[`FS > #rmdirSync > directory is not empty 1`] = `[Error: ENOTEMPTY: directory not empty, /etc/nginx]`;
 
-exports[`FS > #rmdirSync 3`] = `[Error: ENOTDIR: not a directory, /etc/nginx/nginx.conf]`;
+exports[`FS > #rmdirSync > target is a file 1`] = `[Error: ENOTDIR: not a directory, /etc/nginx/nginx.conf]`;
 
-exports[`FS > #statSync 1`] = `[Error: ENOENT: no such file or directory, /etc/unknown]`;
+exports[`FS > #statSync > path does not exist 1`] = `[Error: ENOENT: no such file or directory, /etc/unknown]`;
 
-exports[`FS > #touchSync 1`] = `[Error: ENOTDIR: not a directory, /etc/nginx/nginx.conf/wrong]`;
+exports[`FS > #touchSync > parent directory does not exist 1`] = `[Error: ENOENT: no such file or directory, /opt/folder/inner]`;
 
-exports[`FS > #touchSync 2`] = `[Error: ENOENT: no such file or directory, /opt/folder/inner]`;
+exports[`FS > #touchSync > parent path is a file 1`] = `[Error: ENOTDIR: not a directory, /etc/nginx/nginx.conf/wrong]`;
 
-exports[`FS > #unlinkSync 1`] = `[Error: EPERM: operation not permitted, /etc/nginx]`;
+exports[`FS > #unlinkSync > target is a directory 1`] = `[Error: EPERM: operation not permitted, /etc/nginx]`;
 
-exports[`FS > #writeFileSync 1`] = `[Error: ENOENT: no such file or directory, [object Object]]`;
+exports[`FS > #writeFileSync > parent directory does not exist 1`] = `[Error: ENOENT: no such file or directory, [object Object]]`;
 
-exports[`FS > #writeFileSync 2`] = `[Error: EISDIR: illegal operation on a directory, [object Object]]`;
+exports[`FS > #writeFileSync > target is a directory 1`] = `[Error: EISDIR: illegal operation on a directory, [object Object]]`;
