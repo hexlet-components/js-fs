@@ -1,16 +1,15 @@
 // @ts-check
 
-import Tree from '@hexlet/trees';
-import errors from 'errno';
-import path from 'path';
+import Tree from "@hexlet/trees";
+import errors from "errno";
+import path from "path";
 
-import Dir from './Dir.js';
-import File from './File.js';
+import Dir from "./Dir.js";
+import File from "./File.js";
 
-import HexletFsError from './HexletFsError.js';
+import HexletFsError from "./HexletFsError.js";
 
-const getPathParts = (filepath) =>
-  filepath.split(path.sep).filter((part) => part !== '');
+const getPathParts = (filepath) => filepath.split(path.sep).filter((part) => part !== "");
 
 export { Dir, File };
 
@@ -24,7 +23,7 @@ export default class {
    * Constructor
    */
   constructor() {
-    this.tree = new Tree('/', new Dir('/'));
+    this.tree = new Tree("/", new Dir("/"));
   }
 
   /**
@@ -99,7 +98,7 @@ export default class {
     if (!parent.getMeta().isDirectory()) {
       throw new HexletFsError(errors.code.ENOTDIR, filepath);
     }
-    return parent.addChild(base, new File(base, ''));
+    return parent.addChild(base, new File(base, ""));
   }
 
   /**
@@ -203,10 +202,10 @@ export default class {
 
     if (destNode.getMeta().isDirectory()) {
       const name = node.getMeta().getName();
-      return destNode.addChild(name, new File(name, ''));
+      return destNode.addChild(name, new File(name, ""));
     }
     const name = destNode.getMeta().getName();
-    return destParent.addChild(name, new File(name, ''));
+    return destParent.addChild(name, new File(name, ""));
   }
 
   findNode(filepath) {
