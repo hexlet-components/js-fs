@@ -17,17 +17,19 @@ describe('FS', () => {
   it('#copySync', () => {
     expect(() =>
       files.copySync('undefined', '/etc'),
-    ).toThrowErrorMatchingSnapshot();
+    ).toThrowErrorMatchingSnapshot('source does not exist');
 
-    expect(() => files.copySync('/opt', '/etc')).toThrowErrorMatchingSnapshot();
+    expect(() => files.copySync('/opt', '/etc')).toThrowErrorMatchingSnapshot(
+      'source is a directory',
+    );
 
     expect(() =>
       files.copySync('/op/file.txt', '/etc/file.txt/inner'),
-    ).toThrowErrorMatchingSnapshot();
+    ).toThrowErrorMatchingSnapshot('source path is misspelled');
 
     expect(() =>
       files.copySync('/opt/file.txt', '/etc/undefined/inner'),
-    ).toThrowErrorMatchingSnapshot();
+    ).toThrowErrorMatchingSnapshot('destination parent does not exist');
 
     files.copySync('/opt/file.txt', '/etc');
     expect(files.statSync('/etc/file.txt').isFile()).toBe(true);
@@ -38,16 +40,16 @@ describe('FS', () => {
   it('#mkdirpSync', () => {
     expect(() =>
       files.mkdirpSync('/etc/nginx/nginx.conf/wrong'),
-    ).toThrowErrorMatchingSnapshot();
+    ).toThrowErrorMatchingSnapshot('parent path is a file');
   });
 
   it('#mkdirSync', () => {
     expect(() =>
       files.mkdirSync('/etc/nginx/nginx.conf/wrong'),
-    ).toThrowErrorMatchingSnapshot();
+    ).toThrowErrorMatchingSnapshot('parent path is a file');
     expect(() =>
       files.mkdirSync('/opt/folder/inner'),
-    ).toThrowErrorMatchingSnapshot();
+    ).toThrowErrorMatchingSnapshot('parent directory does not exist');
 
     expect(files.statSync('/opt').isDirectory()).toBe(true);
   });
@@ -55,10 +57,10 @@ describe('FS', () => {
   it('#touchSync', () => {
     expect(() =>
       files.touchSync('/etc/nginx/nginx.conf/wrong'),
-    ).toThrowErrorMatchingSnapshot();
+    ).toThrowErrorMatchingSnapshot('parent path is a file');
     expect(() =>
       files.touchSync('/opt/folder/inner'),
-    ).toThrowErrorMatchingSnapshot();
+    ).toThrowErrorMatchingSnapshot('parent directory does not exist');
 
     expect(files.statSync('/opt/file.txt').isFile()).toBe(true);
   });
@@ -66,11 +68,11 @@ describe('FS', () => {
   it('#writeFileSync', () => {
     expect(() =>
       files.writeFileSync('/etc/unknown/file', 'body'),
-    ).toThrowErrorMatchingSnapshot();
+    ).toThrowErrorMatchingSnapshot('parent directory does not exist');
 
     expect(() =>
       files.writeFileSync('/etc', 'body'),
-    ).toThrowErrorMatchingSnapshot();
+    ).toThrowErrorMatchingSnapshot('target is a directory');
   });
 
   it('#readdirSync', () => {
@@ -78,11 +80,11 @@ describe('FS', () => {
 
     expect(() =>
       files.readdirSync('/etc/nginx/undefined'),
-    ).toThrowErrorMatchingSnapshot();
+    ).toThrowErrorMatchingSnapshot('directory does not exist');
 
     expect(() =>
       files.readdirSync('/etc/nginx/nginx.conf'),
-    ).toThrowErrorMatchingSnapshot();
+    ).toThrowErrorMatchingSnapshot('target is a file');
   });
 
   it('#readFileSync', () => {
@@ -90,17 +92,19 @@ describe('FS', () => {
 
     expect(() =>
       files.readFileSync('/etc/nginx'),
-    ).toThrowErrorMatchingSnapshot();
+    ).toThrowErrorMatchingSnapshot('target is a directory');
     expect(() =>
       files.readFileSync('/etc/unknown'),
-    ).toThrowErrorMatchingSnapshot();
+    ).toThrowErrorMatchingSnapshot('file does not exist');
   });
 
   it('#unlinkSync', () => {
     files.unlinkSync('/etc/nginx/nginx.conf');
     expect(files.readdirSync('/etc/nginx')).toEqual(['conf.d']);
 
-    expect(() => files.unlinkSync('/etc/nginx')).toThrowErrorMatchingSnapshot();
+    expect(() => files.unlinkSync('/etc/nginx')).toThrowErrorMatchingSnapshot(
+      'target is a directory',
+    );
   });
 
   it('#rmdirSync', () => {
@@ -109,13 +113,15 @@ describe('FS', () => {
 
     expect(() =>
       files.rmdirSync('/etc/unknown'),
-    ).toThrowErrorMatchingSnapshot();
+    ).toThrowErrorMatchingSnapshot('directory does not exist');
 
-    expect(() => files.rmdirSync('/etc/nginx')).toThrowErrorMatchingSnapshot();
+    expect(() => files.rmdirSync('/etc/nginx')).toThrowErrorMatchingSnapshot(
+      'directory is not empty',
+    );
 
     expect(() =>
       files.rmdirSync('/etc/nginx/nginx.conf'),
-    ).toThrowErrorMatchingSnapshot();
+    ).toThrowErrorMatchingSnapshot('target is a file');
   });
 
   it('#statSync', () => {
@@ -125,6 +131,8 @@ describe('FS', () => {
     expect(files.statSync('/etc/nginx/nginx.conf').isDirectory()).toBe(false);
     expect(files.statSync('/etc/nginx/nginx.conf').isFile()).toBe(true);
 
-    expect(() => files.statSync('/etc/unknown')).toThrowErrorMatchingSnapshot();
+    expect(() => files.statSync('/etc/unknown')).toThrowErrorMatchingSnapshot(
+      'path does not exist',
+    );
   });
 });
