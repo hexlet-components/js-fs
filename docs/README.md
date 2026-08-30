@@ -6,63 +6,63 @@
 
 ### Table of Contents
 
--   [index][1]
-    -   [Examples][2]
-    -   [mkdirSync][3]
-        -   [Parameters][4]
-        -   [Examples][5]
-    -   [mkdirpSync][6]
-        -   [Parameters][7]
-        -   [Examples][8]
-    -   [rmdirSync][9]
-        -   [Parameters][10]
-        -   [Examples][11]
-    -   [touchSync][12]
-        -   [Parameters][13]
-        -   [Examples][14]
-    -   [unlinkSync][15]
-        -   [Parameters][16]
-        -   [Examples][17]
-    -   [readdirSync][18]
-        -   [Parameters][19]
-        -   [Examples][20]
-    -   [statSync][21]
-        -   [Parameters][22]
-        -   [Examples][23]
-    -   [writeFileSync][24]
-        -   [Parameters][25]
-        -   [Examples][26]
-    -   [readFileSync][27]
-        -   [Parameters][28]
-        -   [Examples][29]
-    -   [copySync][30]
-        -   [Parameters][31]
--   [Dir][32]
-    -   [Parameters][33]
-    -   [Examples][34]
-    -   [isDirectory][35]
-        -   [Examples][36]
-    -   [isFile][37]
-        -   [Examples][38]
--   [Node][39]
-    -   [Parameters][40]
-    -   [getStats][41]
-    -   [getName][42]
--   [Stats][43]
-    -   [Parameters][44]
-    -   [isFile][45]
-    -   [isDirectory][46]
--   [File][47]
-    -   [Parameters][48]
-    -   [Examples][49]
-    -   [getBody][50]
-        -   [Examples][51]
-    -   [isDirectory][52]
-        -   [Examples][53]
-    -   [isFile][54]
-        -   [Examples][55]
--   [constructor][56]
-    -   [Parameters][57]
+- [index][1]
+    - [Examples][2]
+    - [mkdirSync][3]
+        - [Parameters][4]
+        - [Examples][5]
+    - [mkdirpSync][6]
+        - [Parameters][7]
+        - [Examples][8]
+    - [rmdirSync][9]
+        - [Parameters][10]
+        - [Examples][11]
+    - [touchSync][12]
+        - [Parameters][13]
+        - [Examples][14]
+    - [unlinkSync][15]
+        - [Parameters][16]
+        - [Examples][17]
+    - [readdirSync][18]
+        - [Parameters][19]
+        - [Examples][20]
+    - [statSync][21]
+        - [Parameters][22]
+        - [Examples][23]
+    - [writeFileSync][24]
+        - [Parameters][25]
+        - [Examples][26]
+    - [readFileSync][27]
+        - [Parameters][28]
+        - [Examples][29]
+    - [copySync][30]
+        - [Parameters][31]
+- [Dir][32]
+    - [Parameters][33]
+    - [Examples][34]
+    - [isDirectory][35]
+        - [Examples][36]
+    - [isFile][37]
+        - [Examples][38]
+- [Node][39]
+    - [Parameters][40]
+    - [getStats][41]
+    - [getName][42]
+- [Stats][43]
+    - [Parameters][44]
+    - [isFile][45]
+    - [isDirectory][46]
+- [File][47]
+    - [Parameters][48]
+    - [Examples][49]
+    - [getBody][50]
+        - [Examples][51]
+    - [isDirectory][52]
+        - [Examples][53]
+    - [isFile][54]
+        - [Examples][55]
+- [constructor][56]
+    - [Parameters][57]
 
 ## index
 
@@ -80,7 +80,7 @@ Make directory
 
 #### Parameters
 
--   `filepath`  
+- `filepath`  
 
 #### Examples
 
@@ -94,7 +94,7 @@ Make directory
 
 #### Parameters
 
--   `filepath`  
+- `filepath`  
 
 #### Examples
 
@@ -108,7 +108,7 @@ Remove directory
 
 #### Parameters
 
--   `filepath`  
+- `filepath`  
 
 #### Examples
 
@@ -122,7 +122,7 @@ Touch file
 
 #### Parameters
 
--   `filepath`  
+- `filepath`  
 
 #### Examples
 
@@ -137,7 +137,7 @@ Unlink file
 
 #### Parameters
 
--   `filepath`  
+- `filepath`  
 
 #### Examples
 
@@ -151,7 +151,7 @@ Read directory
 
 #### Parameters
 
--   `filepath`  
+- `filepath`  
 
 #### Examples
 
@@ -165,7 +165,7 @@ Get file stat
 
 #### Parameters
 
--   `filepath`  
+- `filepath`  
 
 #### Examples
 
@@ -180,8 +180,8 @@ Write file
 
 #### Parameters
 
--   `filepath`  
--   `body`  
+- `filepath`  
+- `body`  
 
 #### Examples
 
@@ -195,7 +195,7 @@ Read file
 
 #### Parameters
 
--   `filepath`  
+- `filepath`  
 
 #### Examples
 
@@ -211,18 +211,18 @@ fs.readdirSync('/etc/nginx'); // [ 'conf.d', 'hosts' ]
 
 #### Parameters
 
--   `src`  
--   `dest`  
+- `src`  
+- `dest`  
 
 ## Dir
 
-**Extends Node**
+### Extends Node
 
 Directory
 
 ### Parameters
 
--   `name`  
+- `name`  
 
 ### Examples
 
@@ -258,7 +258,7 @@ File
 
 ### Parameters
 
--   `name`  
+- `name`  
 
 ### getStats
 
@@ -274,8 +274,8 @@ Stats
 
 ### Parameters
 
--   `file`  
--   `directory`  
+- `file`  
+- `directory`  
 
 ### isFile
 
@@ -287,14 +287,14 @@ is directory?
 
 ## File
 
-**Extends Node**
+### Extends Node
 
 File
 
 ### Parameters
 
--   `name`  
--   `body`  
+- `name`  
+- `body`  
 
 ### Examples
 
@@ -341,8 +341,8 @@ Constructor
 
 ### Parameters
 
--   `error`  
--   `path`  
+- `error`  
+- `path`  
 
 [1]: #index
 
